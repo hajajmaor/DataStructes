@@ -1,0 +1,21 @@
+matrix=[][]
+is_matrix_zero=true
+is_matrix_slent=true
+
+
+[X,2,3,4]
+[2,X,4,5]
+[4,5,X,9]
+[2,67,8,X]
+
+i=j
+
+
+
+for i=0<matrix.length//2
+    for j=0<matrix[0].length//2
+        if matrix[i][j] !=0 then
+            is_matrix_zero = false
+        if i==j:
+            if matrix[i][j] ==0 then
+                is_matrix_slent=false

@@ -14,10 +14,11 @@ public class TwoArrays {
          * גם N פעמים
          * 
          */
-        for (int m = 0; m < 2 * n; m++) {
-            System.out.println(m); // n פעמים
-        }
-        // runtime: 3n+1 ~= O(n)
+
+        // for (int m = 0; m < 2 * n; m++) {
+        // System.out.println(m); // n פעמים
+        // }
+        // // runtime: 3n+1 ~= O(n)
 
     }
 }

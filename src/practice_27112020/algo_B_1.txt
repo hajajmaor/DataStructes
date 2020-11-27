@@ -1,0 +1,22 @@
+arr1 int[n] 
+arr2 int[n]
+
+
+
+//arr_result new int[arr1.length]
+
+arr_result new LinkedList<Integer>()
+
+for i=0;i<arr1.length
+    for j=0;j<arr2.length
+        if arr1[i] == arr2[j]
+            add to arr_result
+
+number_of_elemnts_in_linkedList = arr_result.size()
+
+
+final_result = new int[number_of_elemnts_in_linkedList]
+for i=0<arr_result.size()
+    final_result[i] =arr_result.get(i)
+
+return final_result
