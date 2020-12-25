@@ -1,0 +1,26 @@
+a : Stack ={1,2,3,4,5,6} //original
+// b=new int [a.length]
+// for number in a:
+//	b.add(number)
+
+b = new stack()
+
+while a.isEmpty() == false : // while a.size>0:
+	temp = a.pop()
+	b.push(temp)
+
+//b after copy from a
+a={}
+b= {6,5,4,3,2,1}
+
+c=New stack()
+while  b.isEmpty() == false : // while b.size>0:
+	temp = b.pop()
+	c.push(temp)
+	a.push(temp)
+
+a : Stack ={1,2,3,4,5,6}
+c={1,2,3,4,5,6}
+return c
+	
+

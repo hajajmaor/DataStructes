@@ -1,0 +1,11 @@
+algo Tenis(Queue q)
+while q.size() >= 2:
+    playerOne = q.dequeue //8
+    playerTwo = q.dequeue //2
+    if (playerOne> playerTwo)
+        q.enqueue(playerOne)
+    else
+        q.enqueue(playerTwo)
+------------------------------
+// size of q = 1
+print q.front()
