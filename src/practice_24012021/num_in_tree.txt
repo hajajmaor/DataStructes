@@ -1,0 +1,106 @@
+class Leaf:
+    int data
+    Leaf left,right (הפניות)
+
+קטן ממש זה <
+גדול ממש זה >
+
+
+//1
+function    true\false    NumberInTree (Leaf root, int k) {
+    if root == null : 
+        return false
+    
+    if root.data == k :
+        return true
+    else :
+        if k < root.data:
+            root = root.left
+        else 
+            root=root.right
+        return NumberInTree(root, k)
+}
+
+//2
+function int countSmallerOrEqualToK (Leaf root, int k){
+    if root == null : 
+        return 0
+    
+    counter=0
+    if root.data <= k:
+        counter = counter + 1
+        // לבדוק גם מימין וגם משמאל
+
+        result_left = countSmallerOrEqualToK(root.left,k) // חפש בתת עץ שמאל
+        result_right = countSmallerOrEqualToK(root.right,k) // חפש בתת עץ ימין
+        // סיימתי חיפוש בתת עץ ימין ותת עץ שמאל
+        counter = counter + result_left + result_right
+    else
+        // אם המספר שאנחנו משווים גדול מהערך שמחפשים, אין טעם לבדוק מצד ימין
+        // כי בהכרח הם יהיו גדולים יותר
+        result_left = countSmallerOrEqualToK(root.left,k) // חפש בתת עץ שמאל
+        counter = counter + result_left
+
+    return counter
+}
+
+
+//3
+function int countLeaves(Leaf root){
+    if root == null : 
+        return 0
+    
+    counter = 0
+    if root.left == null and/&& root.right == null:
+        //מצאתי עלה
+        counter = counter + 1
+    else:
+        // מצאתי צומת לפחות עם ילד אחד
+        counter = counter + countLeaves(root.left)
+        counter = counter + countLeaves(root.right)
+
+    return counter
+
+}
+
+
+//5
+
+תהליך : 
+מקבלים 2 מערכים, נקרא להם A B
+1. נהפוך את מערך A לעץ חיפוש בינארי
+2. נעבור על איברי מערך B באמצעות לולאה
+    2.1 נשתמש בפונקציה שכתבנו בסעיף 1 בשיעור, ונבדוק האם המספר קיים בעץ.
+        2.1.1 נוסיף את המספר למחסנית
+3. מחזיר את המחסנית
+
+function Stack<int> findNumbersExistsInTwoArrays(int [] a,b){
+    Leaf root=New leaf(a[0]) // שורש העץ החדש
+    for i=1 i< a.length i++ :
+        buildTree(root,a[i])
+    
+    result = new Stack<int>
+
+    for i=1 i<b.length i++:
+        if NumberInTree (root, b[i]) == true :
+            result.push(b[i])
+    
+    // מגדירים מערך בגודל המחסנית
+    // מוציאים איבר איבר מהמחסנית עד שהמחסנית ריקה
+    // כל איבר שמוציאים מוסיפים למערך באינדקס רץ
+    return result
+}
+
+
+function void buildTree(Leaf root, int x){
+    if x < root.data:
+        if root.left == null:
+            root.left = new Leaf(x)
+        else: 
+            buildTree(root.left,x)
+    else
+        if root.right == null:
+            root.right = new Leaf(x)
+        else: 
+            buildTree(root.right,x)
+}   
