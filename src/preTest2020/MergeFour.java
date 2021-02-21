@@ -1,4 +1,4 @@
-package preTest;
+package preTest2020;
 
 public class MergeFour {
     public static void main(String[] args) {

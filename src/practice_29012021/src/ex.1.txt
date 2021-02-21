@@ -1,0 +1,92 @@
+# חזרה
+[12,1,50,22,3]
+
+Hash Function(int n)
+    return n % 5
+
+
+x=11
+1%x=0
+
+Y=20
+20%Y = 0
+39 % Y = 19
+
+int[20]= {0-19}
+
+# EX.1
+
+
+#
+1.	נבדוק האם יש כפילויות במערך ב3 דרכים שונים ומה היתרונות/חסרונות של כל דרך:
+a.	לולאה מקוננת
+b.	מיון
+c.	טבלת גיבוב
+
+[1,8,6,52,4,7,5,2,34,4]
+
+# Find duplicates in array
+
+function FindDuplicatesWithLoops(int [] arr):
+//מציאת המספר הכפול והחזרה שלו
+// O(n^2)
+// O=200^2
+// n=200
+    for (int i = 0; i<arr.length; i++) // n
+        for (int j = i+1 ; j<arr.length; j++) n^2
+            if arr[i] == arr[j]:
+                return arr[i]
+
+
+#----------------------------------------------
+
+function FindDuplicatesWithSort(int [] arr):
+// quickSort = O(n*logn) 
+// quickSort + loop ~= O(n*logn)
+    arr = quickSort(arr) // n*logn
+    for (int i=0; i< arr.length-1 ; i++) // n
+        if arr[i] == arr[i+1]:
+            return arr[i]
+
+#arr=int[5]
+#0..4
+function quickSort(int [] arr):
+    pass
+
+#----------------------------------------------
+function FindDuplicatesWithHash(int [] arr):
+
+    function hash(int k, int mod) // Eliora's Function
+        return k % mod 
+
+
+    max=arr[0]
+    for (int i=1; i<arr.length; i++) //O(n)
+        if arr[i]>max:
+            max=arr[i]
+    //max = 500
+
+
+    hashTable = int[max] // Space O(max/k)
+
+    for (int i=0; i<arr.length; i++)
+        int value = arr[i] % max // 2,3,100,500,50
+        if hashTable[value] != 0: // הערך שונה
+
+#ex2
+2.	נתון מערך קלט בגודל n המכיל מספרים. נתון שכל המספרים בין 0 ל  n  נמצאים שם למעט מספר אחד כלשהו. מצא את המספר החסר.
+a.	לולאה מקוננת
+b.	מיון
+c.	טבלת גיבוב
+
+arr={0,1,2,3,4,5,6,6,8,9}
+n=10
+hashtable = int[n]
+# ממלא את המידע הקיים
+for(i=0; i <arr.length; i++)
+    hashTable[arr[i]] = arr[i]
+
+# נרוץ על מערך התוצאה בלולאה מ0 עד גודל המערך בקפיצות של 1
+# אם יש תא ריק. תא שהערך ==0 
+# נחזיר את האינדקס
+

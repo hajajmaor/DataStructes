@@ -14,11 +14,11 @@ public class FindMinMax {
                 max = arr[i];
         }
 
-        for (int j = 0; j < arr.length; j++) {
-            var x = arr[i] - min; // המספר במערך המקורי
-            var y = count[x] - 1; // מציבים את המספר X בתור אינדקס במערך העזר
-            output[y] = arr[i]; // את התוצאה של Y, נציב כאינדקס במערך התוצאה
-        }
+        // for (int j = 0; j < arr.length; j++) {
+        // var x = arr[i] - min; // המספר במערך המקורי
+        // var y = count[x] - 1; // מציבים את המספר X בתור אינדקס במערך העזר
+        // output[y] = arr[i]; // את התוצאה של Y, נציב כאינדקס במערך התוצאה
+        // }
 
         // max= 5000, min=1
     }
